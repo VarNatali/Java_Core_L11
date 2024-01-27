@@ -9,18 +9,20 @@ public class MenuAuto {
         System.out.println();
         System.out.println(" Щоб вивести всі авто, атисніть 1");
         System.out.println(" Щоб засетити однакове значення в масив Авто натисніть 2");
-
+        System.out.println(" Щоб завершити роботу натисніть 3");
         System.out.println();
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+
         HelmMaterials[] materials = HelmMaterials.values();
+        Scanner sc = new Scanner(System.in);
 
         /* Сформували масив, з яким далі працюємо */
         Auto[][] arrAuto = getAutos(materials);
+        boolean fin = true;
 
-        while (true) {
+        while (fin) {
             menu();
             switch (sc.next()) {
                 case "1":
@@ -40,6 +42,9 @@ public class MenuAuto {
                     }
                     System.out.println(Arrays.deepToString(arrAuto));
 
+                    break;
+                case "3":
+                    fin = false;
                     break;
 
             }
